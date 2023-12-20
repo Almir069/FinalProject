@@ -32,7 +32,7 @@ def test_post_listview(self):
     self.assertEqual(response.status_code, 200)
     self.assertContains(response, "Nice body content")
     self.assertTemplateUsed(response, "home.html")
-def test_post_detailview(self): # new
+def test_post_detailview(self): 
     response = self.client.get(reverse("post_detail",
         kwargs={"pk": self.post.pk}))
     no_response = self.client.get("/post/100000/")
